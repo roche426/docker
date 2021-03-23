@@ -1,0 +1,5 @@
+.env
+.idea
+config/sites-enabled/vhost.conf
+
+./.idea

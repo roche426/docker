@@ -1,0 +1,35 @@
+<VirtualHost *:80>
+    ServerName aurelien-recette.local
+    ServerAlias www.aurelien-recette.local
+
+    DocumentRoot /var/www/html/aurelien-roche-website/public
+
+    <Directory /var/www/html/aurelien-roche-website/public/>
+        DirectoryIndex index.php
+        Order allow,deny
+        allow from all
+        AllowOverride All
+        Options -Indexes -Includes -ExecCGI +FollowSymlinks
+    </Directory>
+    ErrorLog /var/log/apache2/error.log
+    LogLevel warn
+    CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName aurelien-production.local
+    ServerAlias www.aurelien-production.local
+
+    DocumentRoot /var/www/html/jennifer-wordpress/
+
+    <Directory /var/www/html/jennifer-wordpress/>
+        DirectoryIndex index.php
+        Order allow,deny
+        allow from all
+        AllowOverride All
+        Options -Indexes -Includes -ExecCGI +FollowSymlinks
+    </Directory>
+    ErrorLog /var/log/apache2/error.log
+    LogLevel warn
+    CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
